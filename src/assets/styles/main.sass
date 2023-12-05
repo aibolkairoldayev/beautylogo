@@ -1,0 +1,258 @@
+@import './common'
+
+.banner
+    height: 600px
+    position: relative
+    display: flex
+
+.langs
+    position: absolute
+    top: 16px
+    left: 8px
+
+.banner__left
+    position: relative
+    width: 55%
+    height: 100%
+
+.banner__bg
+    width: 101%
+    height: 100%
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.banner__logo
+    position: absolute
+    top: 0
+    right: 0
+    width: 100%
+    height: 100%
+    max-width: 820px
+    display: flex
+    align-items: center
+    justify-content: start
+    img
+        width: 600px
+        height: 300px
+
+.banner__right
+    width: 45%
+    background: #6392AB
+    border-left: 1px solid #fff
+    height: 100%
+
+.banner__content
+    width: 100%
+    height: 100%
+    max-width: 630px
+    display: flex
+    padding-left: 12px
+    flex-direction: column
+    justify-content: center
+
+.banner__text
+    color: #FFF
+    font-size: 35px
+    line-height: 140%
+
+.banner__title
+    color: #FFF
+    font-size: 75px
+    line-height: 140%
+    margin: 10px 0 20px
+
+.banner__btn
+    background: #E4D6C4
+    color: #000
+    font-size: 24px
+    width: 280px
+    height: 50px
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 30px
+.about
+    margin: 70px 0 150px
+
+.about__items
+    display: flex
+    justify-content: space-between
+
+.about__item
+    border-radius: 147px
+    border: 2px dashed #BDB495
+    background: #FFF
+    box-shadow: 0px 4px 34px 0px rgba(189, 180, 149, 0.80)
+    height: 310px
+    width: 310px
+    padding: 30px 10px
+    display: flex
+    flex-direction: column
+    align-items: center
+    img
+        max-height: 100px
+        max-width: 110px
+    b
+        color: #221F42
+        text-align: center
+        font-size: 45px
+        font-weight: 400
+        line-height: 57px
+    p
+        color: #000
+        font-size: 20px
+        font-weight: 400
+        max-width: 250px
+        text-align: center
+        margin: 0
+
+.about__title
+    margin-bottom: 24px
+    text-align: center
+
+.catalog__title
+    text-align: center
+    margin-bottom: 28px
+
+.catalog__nav
+    display: flex
+    justify-content: center
+    margin-bottom: 20px
+    p
+        margin: 0 12px
+        color: #828282
+        font-size: 26px
+        font-weight: 400
+        line-height: 22px
+        &.active
+            color: #074566
+            font-size: 26px
+            font-weight: 400
+            line-height: 22px
+            text-decoration-line: underline
+.catalog__items
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    gap: 40px 50px
+    margin-bottom: 75px
+
+.catalog__item
+    border-radius: 10px
+    box-shadow: 0px 4px 34px 0px rgba(7, 69, 102, 0.50)
+    height: 360px
+    img
+        border-radius: 10px 10px 0 0
+        height: 280px
+        width: 100%
+    b
+        font-family: 'Inter', sans-serif
+        text-align: center
+        display: block
+        font-size: 20px
+        line-height: 24.3px
+        margin-top: 20px
+.ways__title
+    margin-bottom: 60px
+    text-align: center
+
+.ways__items
+    display: flex
+    justify-content: space-between
+    margin-bottom: 180px
+
+.ways__item
+    width: 23%
+    border-radius: 30px
+    box-shadow: 0px 4px 34px 0px rgba(7, 69, 102, 0.50)
+    padding: 30px
+    img
+        height: 225px
+        width: 100%
+        object-fit: cover
+        margin-bottom: 12px
+    b
+        color: #074566
+        text-align: center
+        font-size: 25px
+        font-weight: 600
+        line-height: 25px
+        display: block
+
+.samples
+    padding: 30px 0
+    &__title
+        margin-bottom: 80px
+        text-align: center
+    &__content
+        border-radius: 30px
+        border: 1px dashed #BDB495
+        box-shadow: 0px 4px 34px 0px rgba(7, 69, 102, 0.50)
+        padding: 60px
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        img
+            height: 640px
+            width: 48.5%
+            margin-bottom: 20px
+            object-fit: cover
+
+.steps
+    padding-top: 180px
+    margin-bottom: 120px
+    &__title
+        margin-bottom: 100px
+        text-align: center
+    &__items
+        display: flex
+        justify-content: space-between
+
+    &__item
+        border-radius: 30px
+        border: 1px solid #E0E0E0
+        position: relative
+        width: 260px
+        height: 360px
+        padding: 40px 30px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-between
+        span
+            position: absolute
+            border-radius: 50%
+            border: 1px solid #074566
+            background: #074566
+            height: 70px
+            width: 70px
+            color: #FFF
+            font-size: 20px
+            font-weight: 600
+            line-height: 27px
+            font-family: 'Inter', sans-serif
+            display: flex
+            justify-content: center
+            align-items: center
+            top: -35px
+            left: 50%
+            transform: translateX(-50%)
+        img
+            max-width: 120px
+            max-height: 120px
+    &__info
+        b
+            margin-top: 12px
+            font-family: 'Inter', sans-serif
+            font-size: 18px
+            font-weight: 600
+            line-height: 27px
+            display: block
+            text-align: center
+        p
+            font-family: 'Roboto', sans-serif
+            font-size: 15px
+            font-weight: 300
+            line-height: 23.25px
+            text-align: center
