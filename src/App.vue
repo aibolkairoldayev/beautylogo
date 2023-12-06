@@ -1,5 +1,6 @@
 <script setup>
 import Header from "./components/layouts/Header.vue";
+import Footer from "./components/layouts/Footer.vue";
 import HomePage from "./views/HomePage.vue";
 // export default {
 //   name: "App",
@@ -13,6 +14,7 @@ import HomePage from "./views/HomePage.vue";
 <template>
   <Header />
   <Home-page />
+  <Footer />
 </template>
 
 <style lang="sass" scoped>

@@ -14,10 +14,10 @@
         <a href="#works">Примеры работ</a>
       </li>
       <li>
-        <a href="#contacts">Контакты</a>
+        <a href="#footer">Контакты</a>
       </li>
     </ul>
-    <div class="header__btn">Консультация</div>
+    <a href="#form" class="header__btn">Консультация</a>
   </header>
 </template>
 
@@ -29,11 +29,20 @@
   justify-content: space-between
   align-items: center
   padding: 0 10px 0 30px
-
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  background: #fff
+  z-index: 1
 .header__nav
   display: flex
   li
     margin-right: 18px
+    &:hover
+      a
+        color: #074566
+        text-decoration: underline
     a
       color: #000
       font-family: 'Comfortaa', sans-serif
@@ -50,4 +59,6 @@
   justify-content: center
   align-items: center
   border-radius: 30px
+  &:hover
+    opacity: .7
 </style>
