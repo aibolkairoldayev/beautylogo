@@ -1,10 +1,20 @@
 <script setup>
 import { useRootStore } from "@/stores/root";
 import { storeToRefs } from "pinia";
+import { useI18n } from "vue-i18n";
+
+import Lang from "./../components/Lang.vue";
 
 const rootStore = useRootStore();
-const { aboutItems, cats, catItems, ways, samples, steps, activeCat, langs } =
-  storeToRefs(rootStore);
+const {
+  translatedCatItems,
+  translatedWays,
+  samples,
+  translatedASteps,
+  activeCat,
+  translatedAboutItems,
+  translatedCats,
+} = storeToRefs(rootStore);
 
 function setActiveCat(id) {
   activeCat.value = id;
@@ -12,20 +22,10 @@ function setActiveCat(id) {
 </script>
 
 <template>
-  <h1>{{ $t("consult") }}</h1>
   <main class="main">
     <section class="banner">
       <div class="langs">
-        <select name="" id="">
-          <option
-            v-for="item in langs"
-            :key="item.id"
-            value="item.value"
-            @click="switchLanguage(item.value)"
-          >
-            {{ item.title }}
-          </option>
-        </select>
+        <Lang />
       </div>
       <div class="banner__left">
         <div class="banner__bg">
@@ -37,17 +37,21 @@ function setActiveCat(id) {
       </div>
       <div class="banner__right">
         <div class="banner__content">
-          <div class="banner__text">Шьем мечты о красоте</div>
-          <div class="banner__title">Пошив одежды на заказ</div>
-          <a href="#form" class="banner__btn">Рассчитать стоимость</a>
+          <div class="banner__text">{{ $t("banner.text") }}</div>
+          <div class="banner__title">{{ $t("banner.title") }}</div>
+          <a href="#form" class="banner__btn">{{ $t("banner.btn") }}</a>
         </div>
       </div>
     </section>
     <div class="container">
       <section class="about">
-        <div class="about__title main-title">О нас</div>
+        <div class="about__title main-title">{{ $t("about.title") }}</div>
         <div class="about__items">
-          <div class="about__item" v-for="item in aboutItems" :key="item.id">
+          <div
+            class="about__item"
+            v-for="item in translatedAboutItems"
+            :key="item.id"
+          >
             <img :src="`${item.img}`" alt="icon" />
             <b>{{ item.title }}</b>
             <p>{{ item.text }}</p>
@@ -55,10 +59,10 @@ function setActiveCat(id) {
         </div>
       </section>
       <section class="catalog" id="catalog">
-        <div class="catalog__title main-title">Категории товаров</div>
+        <div class="catalog__title main-title">{{ $t("catalog.title") }}</div>
         <div class="catalog__nav">
           <p
-            v-for="item in cats"
+            v-for="item in translatedCats"
             :key="item.id"
             :class="{ active: item.id == activeCat }"
             @click="setActiveCat(item.id)"
@@ -69,7 +73,9 @@ function setActiveCat(id) {
         <div class="catalog__items">
           <div
             class="catalog__item"
-            v-for="item in catItems.filter((item) => item.catId === activeCat)"
+            v-for="item in translatedCatItems.filter(
+              (item) => item.catId === activeCat
+            )"
             :key="item.id"
           >
             <img :src="`${item.img}`" alt="img" />
@@ -78,16 +84,16 @@ function setActiveCat(id) {
         </div>
       </section>
       <section class="ways" id="ways">
-        <div class="ways__title main-title">Способы нанесения</div>
+        <div class="ways__title main-title">{{ $t("ways.title") }}</div>
         <div class="ways__items">
-          <div class="ways__item" v-for="item in ways" :key="item.id">
+          <div class="ways__item" v-for="item in translatedWays" :key="item.id">
             <img :src="`${item.img}`" alt="img" />
             <b>{{ item.name }}</b>
           </div>
         </div>
       </section>
       <section class="samples" id="works">
-        <div class="samples__title main-title">Примеры работ</div>
+        <div class="samples__title main-title">{{ $t("samples") }}</div>
         <div class="samples__content">
           <img
             :src="`${item.img}`"
@@ -98,9 +104,13 @@ function setActiveCat(id) {
         </div>
       </section>
       <section class="steps">
-        <div class="steps__title main-title">Этапы работы</div>
+        <div class="steps__title main-title">{{ $t("steps.title") }}</div>
         <div class="steps__items">
-          <div class="steps__item" v-for="item in steps" :key="item.id">
+          <div
+            class="steps__item"
+            v-for="item in translatedASteps"
+            :key="item.id"
+          >
             <span>{{ item.number }}</span>
             <div class="steps__info">
               <b>{{ item.name }}</b>
@@ -111,21 +121,21 @@ function setActiveCat(id) {
         </div>
       </section>
       <section class="form" id="form">
-        <div class="form__title main-title">Сотрудничество</div>
+        <div class="form__title main-title">{{ $t("form.title") }}</div>
         <form action="">
           <div class="form__item">
-            <label for="name">Как к Вам обращаться?</label>
-            <input type="text" placeholder="Имя" id="name" />
+            <label for="name">{{ $t("form.name") }}</label>
+            <input type="text" :placeholder="$t(`form.namep`)" id="name" />
           </div>
           <div class="form__item">
-            <label for="phone">Контактные данные</label>
-            <input type="tel" placeholder="Телефон" id="phone" />
+            <label for="phone">{{ $t("form.phone") }}</label>
+            <input type="tel" :placeholder="$t(`form.phonep`)" id="phone" />
           </div>
           <div class="form__item">
-            <label for="comment">Комментарий</label>
+            <label for="comment">{{ $t("form.comment") }}</label>
             <input type="text" id="comment" />
           </div>
-          <button type="submit">Отправить</button>
+          <button type="submit">{{ $t("form.btn") }}</button>
         </form>
       </section>
       <div class="map">

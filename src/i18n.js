@@ -3,8 +3,12 @@ import ruLocale from "./locales/ru.json";
 import kzLocale from "./locales/kz.json";
 import enLocale from "./locales/en.json";
 
+let locale = 'ru'
+
 const i18n = createI18n({
-    locale: 'ru',  // Установите язык по умолчанию
+    legacy: false,
+    locale: locale,
+    fallbackLocale: "ru",
     messages: {
         ru: ruLocale,
         kz: kzLocale,

@@ -5,19 +5,19 @@
   <header class="header">
     <ul class="header__nav">
       <li>
-        <a href="/">Главная</a>
+        <a href="/">{{ $t("menu.main") }}</a>
       </li>
       <li>
-        <a href="#catalog">Каталог</a>
+        <a href="#catalog">{{ $t("menu.catalog") }}</a>
       </li>
       <li>
-        <a href="#works">Примеры работ</a>
+        <a href="#works">{{ $t("menu.samples") }}</a>
       </li>
       <li>
-        <a href="#footer">Контакты</a>
+        <a href="#footer">{{ $t("menu.contacts") }}</a>
       </li>
     </ul>
-    <a href="#form" class="header__btn">Консультация</a>
+    <a href="#form" class="header__btn">{{ $t("consult") }}</a>
   </header>
 </template>
 
@@ -34,7 +34,7 @@
   top: 0
   width: 100%
   background: #fff
-  z-index: 1
+  z-index: 2
 .header__nav
   display: flex
   li

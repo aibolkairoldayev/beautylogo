@@ -1,49 +1,121 @@
 {
     "lang": "en",
     "menu": {
-        "main": "Главная",
-        "catalog": "Каталог",
-        "samples": "Примеры работ",
-        "contacts": "Контакты"
+        "main": "Main",
+        "catalog": "Catalog",
+        "samples": "Work examples",
+        "contacts": "Contacts"
     },
-    "consult": "Cunsulting",
+    "consult": "Consultation",
     "banner": {
-        "text": "Шьем мечты о красоте",
-        "title": " Пошив одежды на заказ",
-        "btn": "Рассчитать стоимость"
+        "text": "We sew dreams of beauty",
+        "title": " Tailoring to order",
+        "btn": "Calculate the cost"
     },
     "about": {
-        "title": "О нас",
+        "title": "About us",
         "items": {
             "item1": {
-                "name": "Доставка",
-                "text": "быстрая доставка по Казахстану и России"
+                "name": "Delivery",
+                "text": "fast delivery throughout Kazakhstan and Russia"
             },
             "item2": {
-                "name": "10 Лет",
-                "text": "10 лет непрерывного опыта"
+                "name": "10 years",
+                "text": "10 years of continuous experience"
             },
             "item3": {
-                "name": "150 единиц",
-                "text": "сотрудников предприятия"
+                "name": "150 units",
+                "text": "company employees"
             },
             "item4": {
-                "name": "Качество",
-                "text": "премиальное качество продукции"
+                "name": "Quality",
+                "text": "premium product quality"
             }
         }
     },
     "catalog": {
-        "title": "Категории товаров",
+        "title": "Product categories",
+        "cats": {
+            "cat1": "Men's clothing",
+            "cat2": "Women's clothing",
+            "cat3": "Workwear",
+            "cat4": "Print",
+            "cat5": "Embroidery",
+            "cat6": "Car covers",
+            "cat7": "Masks",
+            "cat8": "Cases"
+        },
         "categories": {
-            "category1": "Мужская одежда",
-            "category2": "Женская одежда",
-            "category3": "Спецодежда",
-            "category4": "Принт",
-            "category5": "Вышивка",
-            "category6": "Авто-чехлы",
-            "category7": "Маски",
-            "category8": "Шторы"
+            "category1": "Coat",
+            "category2": "Polo",
+            "category3": "Shirts",
+            "category4": "T-shirts",
+            "category5": "Trousers",
+            "category6": "Hoodies",
+            "category7": "Mikey",
+            "category8": "Shorts",
+            "category9": "Skirts",
+            "category10": "Dresses",
+            "category11": "Blouses",
+            "category12": "Fur coats",
+            "category13": "Overalls",
+            "category14": "Apron",
+            "category15": "Pea coat",
+            "category16": "Cases"
         }
+    },
+    "ways": {
+        "title": "Application methods",
+        "name1": "Silkscreen printing",
+        "name2": "DTF printing",
+        "name3": "Computer embroidery",
+        "name4": "FLEX printing"
+    },
+    "samples": "Work examples",
+    "steps": {
+        "title": "Stages of work",
+        "items": {
+            "item1": {
+                "name": "Application",
+                "text": "Leave a request on our website"
+            },
+            "item2": {
+                "name": "Consultation",
+                "text": "Defining the task, identifying needs"
+            },
+            "item3": {
+                "name": "Agreement",
+                "text": "Development of a design sample, conclusion of a contract, production"
+            },
+            "item4": {
+                "name": "Development",
+                "text": "We develop products based on previous stages"
+            },
+            "item5": {
+                "name": "Delivery",
+                "text": "Delivery of products to the client"
+            }
+        }
+    },
+    "form": {
+        "title": "Cooperation",
+        "name": "How can I call you?",
+        "namep": "Name",
+        "phone": "Contact details",
+        "phonep": "Phone",
+        "comment": "A comment",
+        "btn": "Send"
+    },
+    "footer": {
+        "menu": "MENU",
+        "main": "Main",
+        "catalog": "Catalog",
+        "ways": "Application methods",
+        "samples": "Work examples",
+        "contactm": "Contacts",
+        "contacts": "CONTACTS",
+        "call": "Call",
+        "address": "Kassina str. 33,Almaty",
+        "social": "SOCIALS"
     }
 }
