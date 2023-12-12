@@ -7,7 +7,6 @@ export const useRootStore = defineStore('root', {
   state: () => ({
 
     activeCat: ref(1),
-
     aboutItems: [
       { id: 1, title: "about.items.item1.name", text: 'about.items.item1.text', img: 'src/assets/img/icons/about1.svg' },
       { id: 2, title: 'about.items.item2.name', text: 'about.items.item2.text', img: 'src/assets/img/icons/about2.svg' },
@@ -71,7 +70,12 @@ export const useRootStore = defineStore('root', {
       { id: 3, link: '', img: '/src/assets/img/icons/whtsp.svg' }
     ]
   }),
-
+  actions: {
+    // Метод для установки выбранного языка
+    setLanguage(language) {
+      this.selectedLanguage = language;
+    },
+  },
 
   getters: {
     translatedAboutItems() {
@@ -113,7 +117,7 @@ export const useRootStore = defineStore('root', {
       // Map through aboutItems and replace titles and texts with translations
       return this.steps.map(item => ({
         ...item,
-        title: t(item.name),
+        name: t(item.name),
         text: t(item.text),
       }));
 

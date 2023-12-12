@@ -3,7 +3,7 @@ import ruLocale from "./locales/ru.json";
 import kzLocale from "./locales/kz.json";
 import enLocale from "./locales/en.json";
 
-let locale = 'ru'
+let locale = localStorage.language || 'ru'
 
 const i18n = createI18n({
     legacy: false,

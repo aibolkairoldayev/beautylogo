@@ -1,7 +1,10 @@
 <script setup>
+import axios from "axios";
 import { useRootStore } from "@/stores/root";
 import { storeToRefs } from "pinia";
 import { useI18n } from "vue-i18n";
+
+import { ref } from "vue";
 
 import Lang from "./../components/Lang.vue";
 
@@ -122,18 +125,28 @@ function setActiveCat(id) {
       </section>
       <section class="form" id="form">
         <div class="form__title main-title">{{ $t("form.title") }}</div>
-        <form action="">
+        <form>
           <div class="form__item">
             <label for="name">{{ $t("form.name") }}</label>
-            <input type="text" :placeholder="$t(`form.namep`)" id="name" />
+            <input
+              type="text"
+              :placeholder="$t(`form.namep`)"
+              id="name"
+              name="name"
+            />
           </div>
           <div class="form__item">
             <label for="phone">{{ $t("form.phone") }}</label>
-            <input type="tel" :placeholder="$t(`form.phonep`)" id="phone" />
+            <input
+              type="tel"
+              :placeholder="$t(`form.phonep`)"
+              id="phone"
+              name="phone"
+            />
           </div>
           <div class="form__item">
             <label for="comment">{{ $t("form.comment") }}</label>
-            <input type="text" id="comment" />
+            <input type="text" id="comment" name="comment" />
           </div>
           <button type="submit">{{ $t("form.btn") }}</button>
         </form>

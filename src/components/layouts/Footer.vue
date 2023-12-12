@@ -68,6 +68,8 @@ const { socials } = storeToRefs(rootStore);
 .footer
   padding: 40px 0
   background: #6392AB
+  @media screen and (max-width: 768px)
+    padding: 20px 0
   &__menu
     li
       &:hover
@@ -77,6 +79,11 @@ const { socials } = storeToRefs(rootStore);
     display: flex
     flex-direction: column
     justify-content: space-between
+    @media screen and (max-width: 768px)
+      width: 26%
+    @media screen and (max-width: 480px)
+      width: 100%
+      align-items: center
     a
       height: 140px
       width: 140px
@@ -89,14 +96,25 @@ const { socials } = storeToRefs(rootStore);
       font-weight: 300
       line-height: 21.7px
       font-family: 'Inter', sans-serif
+      @media screen and (max-width: 480px)
+        margin: 12px 0
   .container
     display: flex
     justify-content: space-between
+    @media screen and (max-width: 480px)
+      flex-direction: column
   &__right
     display: flex
+    @media screen and (max-width: 768px)
+      flex-direction: column
+      width: 72%
+    @media screen and (max-width: 480px)
+      width: 100%
   &__item
     margin: 0 16px
     height: 100%
+    @media screen and (max-width: 768px)
+      margin-bottom: 20px
     &--info
       display: flex
       flex-direction: column
@@ -111,7 +129,12 @@ const { socials } = storeToRefs(rootStore);
     text-transform: uppercase
     font-family: 'Comfortaa', serif
     margin-bottom: 15px
+    @media screen and (max-width: 768px)
+      margin-bottom: 8px
   &__menu
+    @media screen and (max-width: 768px)
+      display: grid
+      grid-template-columns: 1fr 1fr
     a
       color: #FFF
       font-family: 'Comfortaa', serif
@@ -126,6 +149,10 @@ const { socials } = storeToRefs(rootStore);
     font-size: 13px
     font-weight: 300
     line-height: 21.7px
+    @media screen and (max-width: 768px)
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
     a
       color: #FFF
       font-family: 'Comfortaa', serif
@@ -134,12 +161,18 @@ const { socials } = storeToRefs(rootStore);
       line-height: 21.7px
       margin-bottom: 10px
       padding: 5px 0 2px
+      @media screen and (max-width: 768px)
+        margin-right: 20px
       &:hover
         color: #BDB495
 
 .socials
+  @media screen and (max-width: 768px)
+    display: flex
   li
     margin-bottom: 5px
+    @media screen and (max-width: 768px)
+      margin-right: 10px
     img
       &:hover
         opacity: .7
