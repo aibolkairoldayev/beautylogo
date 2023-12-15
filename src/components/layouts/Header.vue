@@ -21,9 +21,9 @@ const closeBurger = () => {
       <span></span>
     </div>
     <ul class="header__nav">
-      <li>
+      <!-- <li>
         <a href="/">{{ $t("menu.main") }}</a>
-      </li>
+      </li> -->
       <li>
         <a href="#catalog">{{ $t("menu.catalog") }}</a>
       </li>

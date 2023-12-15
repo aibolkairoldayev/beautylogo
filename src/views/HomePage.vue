@@ -8,6 +8,12 @@ import { ref } from "vue";
 
 import Lang from "./../components/Lang.vue";
 
+let answerShow = ref(false);
+
+const name = ref("");
+const phone = ref("");
+const comment = ref("");
+
 const rootStore = useRootStore();
 const {
   translatedCatItems,
@@ -22,6 +28,29 @@ const {
 function setActiveCat(id) {
   activeCat.value = id;
 }
+const submitForm = () => {
+  const formData = new FormData();
+  formData.append("name", name.value);
+  formData.append("phone", phone.value);
+  formData.append("comment", comment.value);
+
+  axios
+    .post("http://mail/index.php", formData)
+    .then((response) => {
+      console.log(response.data);
+      name.value = "";
+      phone.value = "";
+      comment.value = "";
+      answerShow.value = true;
+      setTimeout(() => {
+        answerShow.value = false;
+      }, 2000);
+    })
+    .catch((error) => {
+      console.error("Ошибка при отправке данных формы", error);
+      // Здесь вы можете обрабатывать ошибку, если необходимо
+    });
+};
 </script>
 
 <template>
@@ -32,10 +61,10 @@ function setActiveCat(id) {
       </div>
       <div class="banner__left">
         <div class="banner__bg">
-          <img src="@/assets/img/banner1.png" alt="banner" />
+          <img src="@/assets/img/banner6.jpg" alt="banner" />
         </div>
         <div class="banner__logo">
-          <img src="@/assets/img/logo.svg" alt="logo" />
+          <img src="@/assets/img/icons/logo-foot.svg" alt="logo" />
         </div>
       </div>
       <div class="banner__right">
@@ -125,7 +154,7 @@ function setActiveCat(id) {
       </section>
       <section class="form" id="form">
         <div class="form__title main-title">{{ $t("form.title") }}</div>
-        <form>
+        <form @submit.prevent="submitForm">
           <div class="form__item">
             <label for="name">{{ $t("form.name") }}</label>
             <input
@@ -133,6 +162,7 @@ function setActiveCat(id) {
               :placeholder="$t(`form.namep`)"
               id="name"
               name="name"
+              v-model="name"
             />
           </div>
           <div class="form__item">
@@ -142,14 +172,18 @@ function setActiveCat(id) {
               :placeholder="$t(`form.phonep`)"
               id="phone"
               name="phone"
+              v-model="phone"
             />
           </div>
           <div class="form__item">
             <label for="comment">{{ $t("form.comment") }}</label>
-            <input type="text" id="comment" name="comment" />
+            <input type="text" id="comment" name="comment" v-model="comment" />
           </div>
           <button type="submit">{{ $t("form.btn") }}</button>
         </form>
+        <div :class="{ show: answerShow }" class="form__answer">
+          {{ $t("form.answerGood") }}
+        </div>
       </section>
       <div class="map">
         <iframe

@@ -18,9 +18,9 @@ const { socials } = storeToRefs(rootStore);
         <div class="footer__item">
           <div class="footer__title">{{ $t("footer.menu") }}</div>
           <ul class="footer__menu">
-            <li>
+            <!-- <li>
               <a href="/">{{ $t("footer.main") }}</a>
-            </li>
+            </li> -->
             <li>
               <a href="#catalog">{{ $t("footer.catalog") }}</a>
             </li>

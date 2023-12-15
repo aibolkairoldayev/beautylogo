@@ -104,6 +104,7 @@
         "phone": "Contact details",
         "phonep": "Phone",
         "comment": "A comment",
+        "answerGood": "Your application has been sent successfully!",
         "btn": "Send"
     },
     "footer": {
